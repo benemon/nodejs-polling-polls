@@ -6,5 +6,5 @@ app.use(express.static('public'));
 
 var server = app.listen(8080, function(){
     var address = server.address();
-    console.log("Server started at http://localhost:%s", address.port);
+    console.log("Server started on :%s", address.port);
 });
