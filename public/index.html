@@ -67,7 +67,10 @@
 
         <script>
         	// keep chart object in global scope
-        	var pollResultsChart;
+            var pollResultsChart;
+            var baseUrl = window.location.host;
+
+            console.log(baseUrl);
         	
             function runVisualiser()
             {
@@ -76,7 +79,7 @@
 
                 $.ajax(
                 {
-                    url: 'http://visualiser:8080/api/polls/' + c + '/westvi?limit=' + s,
+                    url: 'http://' + baseUrl + '/api/polls/' + c + '/westvi?limit=' + s,
                     dataType: 'json',
                 }).done(function(json)
                 {
@@ -149,7 +152,7 @@
 
                 $.ajax(
                 {
-                    url: 'http://visualiser:8080/api/companies',
+                    url: 'http://' + baseUrl + 'api/companies',
                     dataType: 'json',
                 }).done(function(json)
                 {
